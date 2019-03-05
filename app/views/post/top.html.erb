@@ -1,0 +1,150 @@
+
+ <%= stylesheet_link_tag "post/top", :media => "all" %>
+ <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+ <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+
+ <script type="text/javascript">
+         $(document).ready(function(){
+             $('.slider').bxSlider({
+                 auto: true,
+                 pause: 5000,
+             });
+         });
+ </script>
+
+<header class="header-nav">
+<h1>Navima  アイスランド</h1>
+ <nav><a href="/">Home</a></nav>
+ <nav><a href="/post/spots">おすすめスポット</a></nav>
+ <nav><a href="/post/information">アイスランドを楽しむ</a></nav>
+<nav><a href="/users/sign_in">みんなのレビュー</a></nav>
+</header>
+
+
+
+
+
+ <!--   First block Start   -->
+
+ <section id="first-block">
+
+
+
+　<div class="title-container">
+  <br>
+  <br>
+  <h2></h2>
+
+  <div class="slider">
+
+  <img src="/assets/iceland_header.jpg" width="100%" height="auto" alt="">
+  <img src="/assets/joshua-earle-432605-unsplash.jpg" width="100%" height="auto" alt="">
+  <img src="/assets/robert-lukeman-150146-unsplash.jpg" width="100%" height="auto" alt="">
+  <img src="/assets/simon-alibert-332063-unsplash.jpg" width="100%" height="auto" alt="">
+
+　　
+</div>
+　</div>
+ </section>
+
+ <!--   First block End   -->
+
+<!--   Second block Start   -->
+
+ <section id="second-block">
+   <p class="info-title">
+    火山と氷河の国 アイスランド
+   </p>
+   <div class="about-container">
+   <p class="info-text">
+    <b>手付かずの大自然</b>
+    <br>
+    <br>
+    <span class="font-small">
+    険しい山々、荘厳な滝、どこまでも広がる平原。アイスランドには人間の手が加えられていない、ありのままの大自然を目にすることができます。
+    <br>
+    大自然豊かなアイスランドに足を運んでみると、日々のストレスや悩みから解放されるでしょう。
+    <br>
+<img src="/assets/about_iceland/Photo_by_Tiana_Attride_on_Unsplash.jpg" heigt="260px" width="300px"/>
+    </span>
+   </p>
+
+   <p class="info-text">
+    <b>野生動物</b>
+    <br>
+    <br>
+    <span class="font-small">
+    アイスランドには珍しい野生動物が多く生息していて、なんと人口の2倍以上の羊がいます。
+    <br>
+    パフィンやホッキョクギツネなど、普段目にかかれないような動物を見て癒されてみませんか？
+    <br>
+   <br>
+    <image src="/assets/about_iceland/Photo_by_Gissur_Steinarsson_on_Unsplash.jpg" heigt="260px" width="300px" >
+    </span>
+   </p>
+
+   <p class="info-text">
+    <b>数々の温泉</b>
+    <br>
+    <br>
+    <span class="font-small">
+   アイスランドは日本と同じ火山大国であるため、島中で温泉を楽しむことができます。
+    <br>
+   中でも地熱を利用した温泉ブルーラグーンは、シリカやミネラルの豊富なお湯でお肌に良い効果があると言われていて、観光客にとっての人気スポットとなっています。
+    <br>
+   <image src="/assets/about_iceland/Photo_by_Jeff_Sheldon_on_Unsplash.jpg" heigt="260px" width="300px" >
+    </span>
+   </p>
+
+   </div>
+  </section>
+
+  <!--   Third block Start   -->
+      <section id="third-block">
+        <section class="third-block">
+          <p class="info-title">
+            Clickable Map
+          </p>
+          <p class="map-text">
+           <b>ピンをクリックしてみてね</b>
+</p>
+          <div class="map">
+
+            <!-- <script src="jquery.min.js"></script>
+            <script src="jquery.rwdImageMaps.min.js"></script> -->
+
+            <script>
+$(document).ready(function(e) {
+	$('img[usemap]').rwdImageMaps();
+});
+</script>
+
+            <!-- <img src="/assets/map.jpg" usemap="#ImageMap" alt="" width="100%" height="auto"/> -->
+            <img src="/assets/map.jpg" usemap="#ImageMap" alt="" style="width:100%; height:auto;"/>
+      <map name="ImageMap">
+        <area shape="rect" coords="1585,3184,1848,3660" href="post/spots#first-block" alt="" />
+        <area shape="rect" coords="2085,3278,2346,3753" href="post/spots#second-block" alt="" />
+        <area shape="rect" coords="2413,2764,2669,3240" href="post/spots#third-block" alt="" />
+        <area shape="rect" coords="2874,2425,3142,2910" href="post/spots#forth-block" alt="" />
+        <area shape="rect" coords="3047,3244,3302,3719" href="post/spots#fifth-block" alt="" />
+        <area shape="rect" coords="3669,3802,3924,4275" href="post/spots#six-block" alt="" />
+        <area shape="rect" coords="4934,2340,5189,2813" href="post/spots#seventh-block" alt="" />
+        <area shape="rect" coords="6612,1638,6866,2117" href="post/spots#eigth-block" alt="" />
+        <area shape="rect" coords="4129,941,4386,1417" href="post/spots#nineth-block" alt="" />
+        <area shape="rect" coords="1681,4,1936,473" href="post/spots#tenth-block" alt="" />
+        <area shape="rect" coords="1700,1925,1962,2397" href="post/spots#eleventh-block" alt="" />
+      </map>
+            </div>
+        </section>
+   <!--   Third block End   -->
+
+
+
+
+
+
+
+     <footer>
+    <p>Copyright © Yusuke Yoshitomi All Rights Reserved.</p>
+ </footer>

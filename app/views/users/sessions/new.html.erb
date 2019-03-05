@@ -1,0 +1,63 @@
+
+ <%= stylesheet_link_tag "users/sessions/new", :media => "all" %>
+
+  <body>
+    <header class="header-nav">
+    <h1>Navima</h1>
+     <nav><a href="/">Home</a></nav>
+     <nav><a href="/post/spots">おすすめスポット</a></nav>
+     <nav><a href="/post/information">アイスランドを楽しむ</a></nav>
+    <nav><a href="/users/sign_in">みんなのレビュー</a></nav>
+    </header>
+<br>
+<br>
+
+<div class=background-container>
+
+  <br>
+  <br>
+<div class="log-in-container">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-1">
+
+    </div>
+    <div class="col-md-10">
+      <h2 class="text-center font-weight-bold pt-5">ログインしてみんなで観光情報をシェアしよう！</h2>
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <div class="field pt-3">
+          <%= f.label :email %><br />
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "col-md-12 form-control" %>
+        </div>
+
+        <div class="field pt-3">
+          <%= f.label :password %><br />
+          <%= f.password_field :password, autocomplete: "off", class: "col-md-12" %>
+        </div>
+
+        <% if devise_mapping.rememberable? -%>
+          <div class="field pt-3">
+            <%= f.check_box :remember_me %>
+            <%= f.label :パスワードを記憶する %>
+          </div>
+        <% end -%>
+
+        <div class="actions pt-3">
+          <%= f.submit "ログイン", class: "btn btn-primary" %>
+        </div>
+      <% end %>
+      <div class="pt-3">
+      </div>
+      <%= render "devise/shared/links" %>
+    </div>
+    <div class="col-md-1">
+
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<footer>
+<p>Copyright © Yusuke Yoshitomi All Rights Reserved.</p>
+</footer>

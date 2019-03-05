@@ -1,0 +1,32 @@
+
+<body>
+  <header class="header-nav">
+  <h1>Navima</h1>
+   <nav><a href="/">Home</a></nav>
+   <nav><a href="/post/spots">おすすめスポット</a></nav>
+   <nav><a href="/post/information">アイスランドを楽しむ</a></nav>
+  <nav><a href="/users/sign_in">みんなのレビュー</a></nav>
+  </header>
+
+<br>
+<br>
+
+<%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
+<% @tweets.each do |t| %>
+  <div>
+    <!-- Timeline Start -->
+    <%= t.user.email %>
+    <!-- Timeline End -->
+    <%= t.body %>
+    <br>
+    <%= t.created_at %>
+
+    <%= link_to "詳細へ", tweet_path(t.id) %>
+   <%= link_to "編集する", edit_tweet_path(t.id) %>
+   <%= link_to "削除する", tweet_path(t.id), method: :delete %>
+  </div>
+<% end %>
+
+<footer>
+<p>Copyright © Yusuke Yoshitomi All Rights Reserved.</p>
+</footer>

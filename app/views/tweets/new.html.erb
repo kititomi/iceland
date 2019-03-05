@@ -1,0 +1,87 @@
+
+
+ <%= stylesheet_link_tag "tweets/new", :media => "all" %>
+
+  <body>
+    <header class="header-nav">
+    <h1>Navima</h1>
+     <nav><a href="/">Home</a></nav>
+     <nav><a href="/post/spots">おすすめスポット</a></nav>
+     <nav><a href="/post/information">アイスランドを楽しむ</a></nav>
+    <nav><a href="/users/sign_in">みんなのレビュー</a></nav>
+    <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
+    </header>
+
+
+<br>
+<br>
+
+<% if flash[:notice] %>
+  <p><%= flash[:notice] %></p>
+<% end %>
+
+
+<section id="first-block">
+<%= form_for(@tweet, :url => { controller:'tweets', action:'create'})do |f| %>
+ <div class="field">
+  <p class="info-title"><%= f.label :アイスランドの最新情報を投稿してみよう！ %></p>
+   <br>
+<p class="textline">
+   <%= f.text_area :body, :size=>"70%x10%" %>
+</P>
+ </div>
+ <div class="action">
+   <%= f.submit %>
+ </div>
+<% end %>
+<br>
+</section>
+
+
+
+<% @tweets.each do |t|  %>
+
+<div class="tweetcontainer">
+
+          <div class="card-1">
+            <div class="title-1">
+                  <p>ユーザー名</p>
+                </div>
+                <p><%= link_to(t.user.username, "/users/#{t.user.id}") %></p>
+              </div>
+
+
+          <div class="card-2">
+            <div class="title-2">
+                  <p>投稿内容</p>
+                </div>
+                <p><%= t.body %></p>
+                <br>
+                  <%= t.created_at %><
+
+              </div>
+
+          <div class="card-3">
+            <div class="title-3">
+                  <p>編集</p>
+                </div>
+                <p><% if current_user.id == t.user_id %>
+                 <%= link_to "編集する", edit_tweet_path(t.id) %>
+                 <br>
+                 <%= link_to "削除する", tweet_path(t.id), method: :delete %>
+                <% end %></p>
+              </div>
+ </div>
+
+
+
+
+<% end %>
+
+
+
+<footer>
+<p>Copyright © Yusuke Yoshitomi All Rights Reserved.</p>
+</footer>
+
+</body>
